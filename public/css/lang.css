@@ -1,0 +1,52 @@
+/* اتجاه الصفحة */
+html[dir="rtl"] {
+    direction: rtl;
+}
+
+html[dir="ltr"] {
+    direction: ltr;
+}
+
+/* إصلاح الأرقام داخل RTL */
+.ltr {
+    direction: ltr;
+    unicode-bidi: bidi-override;
+    text-align: left;
+}
+
+/* دعم الجداول */
+html[dir="rtl"] table {
+    direction: rtl;
+}
+
+html[dir="ltr"] table {
+    direction: ltr;
+}
+
+/* Dropdown اللغة */
+.dropdown-menu {
+    min-width: 140px;
+}
+
+.dropdown-item.active {
+    font-weight: bold;
+    background-color: #e9ecef;
+}
+
+/* خطوط مناسبة */
+html[lang="ar"] body {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+html[lang="en"] body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-menu .dropdown-item.active {
+    color: #000 !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #000 !important;
+}

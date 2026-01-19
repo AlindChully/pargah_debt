@@ -1,0 +1,332 @@
+    body {
+        background-color: #f1f3f6;
+    }
+    .body {
+        padding: 5%;
+    }
+    .top-box {
+        border-radius: 12px;
+        padding: 20px;
+        color: white;
+    }
+    .sidebar {
+        height: 100vh;
+        background: #1f1f2e;
+        color: white;
+        padding-top: 30px;
+    }
+    .sidebar a {
+        color: #cfcfcf;
+        text-decoration: none;
+        display: block;
+        padding: 12px 20px;
+    }
+    .sidebar a:hover {
+        background: #2d2d44;
+        color: #fff;
+    }
+    .content-area {
+        padding: 20px;
+    }
+
+    .ltr {
+        direction: ltr;
+        text-align: left;
+    }
+
+    .col-md-3 {
+        margin-top: 10px;
+    }
+
+    .mobile-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .customer-card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* menu  */
+    .menu {
+        display: none;
+        color: white;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 250px;
+        background: rgba(0, 0, 0, 0.75);
+        color: #fff; 
+        transition: transform 0.4s ease;
+    }
+
+    .offcanvas.offcanvas-start .xbutton {
+        color: #fff !important;  
+    }
+
+    .offcanvas-btn {
+        color: #ffffff;
+        border: none;
+        border-bottom: #ffffff 1px solid;
+        font-size: 0.9rem;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+    }
+    
+    .offcanvas-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(224, 224, 224, 0.1);
+        opacity: 0.95;
+    }
+    
+    .offcanvas .btn {
+        width: auto;
+    }
+
+    .desktop-table {
+        display: table;
+    }
+
+    .mobile-cards {
+        display: none;
+    }
+
+
+/* شاشة صغيرة: أقل من 768px */
+@media (max-width: 834px) and (orientation: portrait) {
+
+    table,
+        table tbody,
+        table tbody tr,
+        table tbody tr td,
+        table tbody tr th {
+            background: transparent !important;
+        }
+    
+    .desktop-table {
+        display: none;
+    }
+
+    .mobile-cards {
+        display: block;
+    }
+
+    .row .total {
+        margin-top: 10px;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    .customer-card {
+        padding: 12px 18px;
+        max-width: 320px;
+        border-radius: 25px;
+        background-color: rgb(238, 238, 238);
+        font-weight: 600;
+        border: none;
+        color: #000000;
+        box-shadow: 10px 10px 10px rgba(10, 99, 169, 0.16),
+                -10px -10px 10px rgba(255, 255, 255, 0.70);
+        margin-bottom: 30px;
+    }
+
+    .customer-card .card-header {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .customer-card .phone {
+        font-size: 16px;
+    }
+
+    .customer-card .card-body div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+
+    .customer-card .red b {
+        color: #dc3545;
+    }
+
+    .customer-card .green b {
+    color: #198754;
+    }
+
+    .customer-card .card-actions {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    /* menu */
+    .menu {
+        display: inline;
+    }
+
+    /* تحويل كل صف إلى بطاقة */
+    table tbody tr {
+        background: #f1f3f6;
+        border-radius: 16px;
+        padding: 12px;
+        margin-bottom: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    table tbody tr td {
+        padding: 6px 0;
+        font-size: 14px;
+    }
+
+    td.action {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    table tbody tr td::before {
+        color: #555;
+        font-weight: 600;
+    }
+
+    /* كل خلية تصبح block */
+    table tbody tr td,
+    table tbody tr th {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+        border: none;
+    }
+
+    table tbody tr td::before {
+        content: attr(data-label);
+        font-weight: bold;
+    }
+
+    /* زر Actions يتحول إلى dropdown */
+    .actions-dropdown {
+        display: block;
+        width: 100%;
+    }
+
+    .actions-dropdown button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .none {
+        display: none;
+    }
+}
+
+
+@media (max-width: 932px) and (orientation: landscape) {
+
+    /* توسيط المحتوى كله */
+    .body {
+        padding: 2% !important;
+        margin: 0 auto !important;
+    }
+
+    .mobile-cards {
+        display: none;
+    }
+
+    /* menu */
+    .menu {
+        display: inline;
+    }
+
+    .d-md-inline-block {
+        display: none !important;
+    }
+
+    .pdf {
+        display: inline !important;
+    }
+
+    /* کارتێت توتەلا */
+    .row.mb-3 {
+        justify-content: center !important;
+    }
+
+    .row.mb-3 .col-md-3 {
+        max-width: 500px;
+    }
+
+    /* كروت التوتال */
+    .show-page small,
+    .show-page strong {
+        font-size: 16px !important;
+    }
+
+    /* جەتوەل */
+    .table-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 10px 10px 10px rgba(10, 99, 169, 0.16), 
+                -10px -10px 10px rgba(255, 255, 255, 0.70);
+    }
+
+    .desktop-table {
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    table th {
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 14px !important;
+    }
+
+    .show-table td {
+        font-size: 12px !important;
+    }
+
+    td button.cardBtn3D {
+        font-size: 12px !important;
+    }
+
+    td a.cardBtn3D {
+        font-size: 12px !important;
+    }
+
+    td.note {
+        width: 150px;
+        max-width: 150px;
+        font-size: 8px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+}
+
+@media (max-width: 767.98px), (max-width: 932px) and (orientation: landscape) {
+    .menu {
+        display: inline;
+    }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+    .menu {
+        display: none;
+    }
+}
