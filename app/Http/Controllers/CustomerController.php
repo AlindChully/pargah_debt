@@ -126,7 +126,7 @@ class CustomerController extends Controller
     {
         $debts = $customer->debts()->where('is_paid', false)->get();
 
-        return Pdf::loadView('customers.pdf', compact('customer', 'debts'))
+        return SnappyPdf::loadView('customers.pdf', compact('customer', 'debts'))
             ->setOption('encoding', 'UTF-8')
             ->setOption('enable-local-file-access', true)
             ->setOption('print-media-type', true)
