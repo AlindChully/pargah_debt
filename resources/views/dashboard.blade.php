@@ -269,7 +269,7 @@
                 <button href="" class="btn offcanvas-btn mb-2" data-bs-toggle="modal" data-bs-target="#addUserModal">
                     <i class="bi bi-person-plus"></i> {{ __('general.add user') }}
                 </button>
-                <a href="" target="_blank" class="btn offcanvas-btn mb-2">
+                <a href="{{ route('users.index') }}" target="_blank" class="btn offcanvas-btn mb-2">
                     <i class="bi bi-person"></i> {{ __('general.users') }}
                 </a>
                 @endif
