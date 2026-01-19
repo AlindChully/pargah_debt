@@ -462,8 +462,8 @@
                 </div>
 
                 <div class="card-body">
-                    <div> <span
-                            class="phone ltr">{{ __('general.phone') }}</span><b>{{ $customer->formatted_phone }}</b>
+                    <div> 
+                        <span>{{ __('general.phone') }}</span><b class="phone ltr" >{{ $customer->formatted_phone }}</b>
                     </div>
                     <div>
                         <span>{{ __('general.unpaid debt') }}</span><b>{{ $customer->debts->where('is_paid', false)->count() }}</b>
