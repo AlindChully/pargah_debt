@@ -76,6 +76,10 @@
 
                         <div class="mt-3 text-center">
                             <p style="font-weight: bold;">@ By Alind Chuly Software</p>
+                            <button class="btn btn-primary btn3D mb-3 d-none d-md-inline-block" data-bs-toggle="modal"
+            data-bs-target="#addUserModal">
+            <i class="bi bi-person-plus"></i> {{ __('general.add user') }}
+        </button>
                         </div>
                     </div>
                 </div>
