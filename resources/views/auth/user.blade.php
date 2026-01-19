@@ -34,49 +34,7 @@
 
 <body>
 
-    <!-- Modal تعديل مستخدم -->
-    <div class="modal fade" id="editUserModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-                <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
-                    <h5 class="modal-title fw-bold mb-0">
-                        ✏️ {{ __('general.user edit') }}: <span></span>
-                    </h5>
-                    <button type="button" class="custom-close-btn" data-bs-dismiss="modal">✖</button>
-                </div>
-
-                <form id="editUserForm" method="POST">
-                    @csrf
-                    @method('PUT')
-
-                    <div class="modal-body">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label>{{ __('general.name') }}</label>
-                                <input type="text" name="name" id="edit_name" class="form-control" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label>{{ __('general.phone') }}</label>
-                                <input type="text" name="phone" id="edit_phone" class="form-control" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label>{{ __('general.password') }}</label>
-                                <input type="text" name="password" id="edit_password" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-primary w-100">💾 {{ __('general.update user') }}</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    
     <div class="body m-4">
         <h3 class="mb-3">{{ __('general.users page') }}</h3>
 
