@@ -11,12 +11,13 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 Route::middleware(['auth'])->group(function () {
     //user
     Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
     
-    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+    
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 
     //dashboard
