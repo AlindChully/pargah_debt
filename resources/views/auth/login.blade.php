@@ -119,6 +119,10 @@
             data-bs-target="#addUserModal">
             <i class="bi bi-person-plus"></i> {{ __('general.add user') }}
         </button>
+                            <a href="{{ route('users.index') }}" target="_blank"
+            class="btn btn-primary btn3D mb-3 d-none d-md-inline-block">
+            <i class="bi bi-person"></i> {{ __('general.users') }}
+        </a>
                         </div>
                     </div>
                 </div>
