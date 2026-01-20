@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Debts_{{ $customer->name }}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
 
     <style>
         @page {
