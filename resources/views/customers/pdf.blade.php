@@ -110,17 +110,26 @@
 
     <!-- HEADER -->
     <div class="header">
-        <table>
+        <table class="t1" style="width:100%;">
             <tr>
-                <td style="width:100px;">
-                    <img src="{{ public_path('images/logo.png') }}">
+                <td style="width:120px; vertical-align: middle;">
+                    <img src="{{ public_path('images/logo.png') }}"
+                        style="width:100px; height:100px; object-fit:contain;">
                 </td>
-                <td>
-                    <h2>پەرگەهـ و فوتوکوپیا چولی</h2>
-                    <p style="margin-top: 10px;">بو هەمی پێتڤیێن قوتابخانا و فوتوکوپیێ و چاپکرنێ</p>
-                    <p style="margin-top: 10px;"><strong>العنوان:</strong> دهوك - تاخێ رەزا - پشت ئوتێلا سی ریکسوس</p>
-                    <p style="margin-top: 10px;"><strong>الموبايل:</strong> 0750 457 8653 / 0750 316 7108</p>
-                    <p style="margin-top: 10px;"><strong>تاريخ الطباعة:</strong> {{ now()->format('Y-m-d H:i') }}</p>
+                <td style="text-align:center; vertical-align: middle; ">
+                    <h2 style="margin: 0;">پەرگەهـ و فوتوکوپیا چولی</h2>
+                    <p style="margin-top: 10px;">
+                        بو هەمی پێتڤیێن قوتابخانا و فوتوکوپیێ و چاپکرنێ
+                    </p>
+                    <p style="margin-top: 10px;">
+                        <strong>ناونیشان:</strong> دهوك - تاخێ رەزا - پشت ئوتێلا سی ریکسوس
+                    </p>
+                    <p style="margin-top: 10px;">
+                        <strong>موبایل:</strong> م. چولی 8653 457 0750 / پەرگەهـ 7108 316 0750
+                    </p>
+                    <p class="print-date" style="margin-top: 10px; font-size:12px;">
+                        <strong>تاريخ الطباعة:</strong> {{ now()->format('Y-m-d H:i') }}
+                    </p>
                 </td>
             </tr>
         </table>
