@@ -118,19 +118,32 @@ class ReceiptController extends Controller
             }
 
             $fileName = 'receipt_' . $receipt->id . '.pdf';
-            $filePath = $path . '/' . $fileName;
+$filePath = $path . '/' . $fileName;
 
-            $debts = $receipt->customer
-                ->debts()
-                ->where('is_paid', false)
-                ->orderBy('debt_date', 'asc')
-                ->get();
+$debts = $receipt->customer
+    ->debts()
+    ->where('is_paid', false)
+    ->orderBy('debt_date', 'asc')
+    ->get();
 
-            SnappyPdf::loadView('receipts.pdf', compact('receipt', 'debts'))
-                ->setOption('encoding', 'UTF-8')
-                ->setOption('enable-local-file-access', true)
-                ->setOption('disable-smart-shrinking', true)
-                ->save($filePath);
+// تحويل الـ view إلى HTML
+$html = View::make('receipts.pdf', compact('receipt', 'debts'))->render();
+
+// إنشاء mPDF
+$mpdf = new Mpdf([
+    'mode' => 'utf-8',
+    'format' => 'A4',
+    'default_font' => 'dejavusans', // مهم لدعم العربية
+    'margin_top' => 10,
+    'margin_bottom' => 10,
+    'margin_left' => 10,
+    'margin_right' => 10,
+]);
+
+$mpdf->WriteHTML($html);
+
+// حفظ الملف
+$mpdf->Output($filePath, \Mpdf\Output\Destination::FILE);
 
             if (!file_exists($filePath)) {
                 throw new \Exception('PDF was not created');
