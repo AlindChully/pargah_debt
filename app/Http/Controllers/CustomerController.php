@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Mpdf\Mpdf;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Spatie\Browsershot\Browsershot;
+use Illuminate\Support\Facades\View;
 use Barryvdh\Snappy\Facades\SnappyPdf;
 
 
@@ -126,11 +129,29 @@ class CustomerController extends Controller
     {
         $debts = $customer->debts()->where('is_paid', false)->get();
 
-        return SnappyPdf::loadView('customers.pdf', compact('customer', 'debts'))
-            ->setOption('encoding', 'UTF-8')
-            ->setOption('enable-local-file-access', true)
-            ->setOption('print-media-type', true)
-            ->setOption('disable-smart-shrinking', true)
-            ->download('debts_' . $customer->name . '.pdf');
+        // توليد HTML من Blade
+        $html = View::make('customers.pdf', compact('customer', 'debts'))->render();
+
+        // إنشاء PDF
+        $mpdf = new Mpdf([
+            'mode' => 'utf-8',
+            'format' => 'A4',
+            'default_font' => 'dejavusans'
+        ]);
+
+        $mpdf->WriteHTML($html);
+
+        // اسم الملف
+        $fileName = 'debts_' . $customer->name . '.pdf';
+
+        // تحميل مباشر
+        return response(
+            $mpdf->Output($fileName, 'S'),
+            200,
+            [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'attachment; filename="' . $fileName . '"',
+            ]
+        );
     }
 }

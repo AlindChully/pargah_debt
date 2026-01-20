@@ -6,157 +6,157 @@
     <title>{{ $title }}</title>
 
     <style>
-        @page {
-            size: A4;
-            margin: 15mm;
-        }
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
 
+    body {
+        font-family: DejaVu Sans, Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        color: #000;
+    }
+
+    .header-fixed {
+        position: fixed;
+        top: -100px;
+        left: 0;
+        right: 0;
+        height: 100px;
+    }
+
+    .footer-fixed {
+        position: fixed;
+        bottom: -80px;
+        left: 0;
+        right: 0;
+        height: 60px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .header-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 100px;
+        /* اجعلها ثابتة لتتناسب مع النص */
+        object-fit: contain;
+        /* لتجنب التشوه */
+    }
+
+    .header-text h2 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 100px;
+        /* نفس ارتفاع الصورة لضبط المحاذاة */
+    }
+
+    .header-text p {
+        margin: 3px 0;
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
+    /* ===== PDF SUMMARY CARDS ===== */
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: none;
+        margin-bottom: 20px;
+    }
+
+    .summary-table tr {
+        border: none !important;
+    }
+
+    .summary-table td {
+        border: none !important;
+        padding: 5px;
+    }
+
+    .summary-card {
+        border: none;
+        border-radius: 6px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .summary-card h5 {
+        margin: 5px 0 0;
+        font-size: 16px;
+    }
+
+    .summary-card p {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .card-danger {
+        background: #fdecea;
+    }
+
+    .card-success {
+        background: #eafaf1;
+    }
+
+    .card-warning {
+        background: #fff6e5;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    th,
+    td {
+        border: 1px solid #000;
+        padding: 6px;
+        text-align: center;
+    }
+
+    thead {
+        background: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .text-danger {
+        color: #c0392b;
+        font-weight: bold;
+    }
+
+    .text-success {
+        color: #27ae60;
+        font-weight: bold;
+    }
+
+    .ltr {
+        direction: ltr;
+        unicode-bidi: bidi-override;
+        font-weight: bold;
+    }
+
+    @media print {
         body {
-            font-family: DejaVu Sans, Tahoma, Arial, sans-serif;
-            font-size: 13px;
-            color: #000;
+            margin: 20px;
         }
 
-        .header-fixed {
-            position: fixed;
-            top: -100px;
-            left: 0;
-            right: 0;
-            height: 100px;
+        img {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
-
-        .footer-fixed {
-            position: fixed;
-            bottom: -80px;
-            left: 0;
-            right: 0;
-            height: 60px;
-            text-align: center;
-            font-size: 12px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .header-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo img {
-            width: 100px;
-            height: 100px;
-            /* اجعلها ثابتة لتتناسب مع النص */
-            object-fit: contain;
-            /* لتجنب التشوه */
-        }
-
-        .header-text h2 {
-            margin: 0;
-            font-size: 22px;
-            line-height: 100px;
-            /* نفس ارتفاع الصورة لضبط المحاذاة */
-        }
-
-        .header-text p {
-            margin: 3px 0;
-            font-size: 13px;
-            line-height: 1.2;
-        }
-
-        /* ===== PDF SUMMARY CARDS ===== */
-        .summary-table {
-            width: 100%;
-            border-collapse: collapse;
-            border: none;
-            margin-bottom: 20px;
-        }
-
-        .summary-table tr {
-            border: none !important;
-        }
-
-        .summary-table td {
-            border: none !important;
-            padding: 5px;
-        }
-
-        .summary-card {
-            border: none;
-            border-radius: 6px;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .summary-card h5 {
-            margin: 5px 0 0;
-            font-size: 16px;
-        }
-
-        .summary-card p {
-            margin: 0;
-            font-size: 12px;
-        }
-
-        .card-danger {
-            background: #fdecea;
-        }
-
-        .card-success {
-            background: #eafaf1;
-        }
-
-        .card-warning {
-            background: #fff6e5;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        th,
-        td {
-            border: 1px solid #000;
-            padding: 6px;
-            text-align: center;
-        }
-
-        thead {
-            background: #f2f2f2;
-            font-weight: bold;
-        }
-
-        .text-danger {
-            color: #c0392b;
-            font-weight: bold;
-        }
-
-        .text-success {
-            color: #27ae60;
-            font-weight: bold;
-        }
-
-        .ltr {
-            direction: ltr;
-            unicode-bidi: bidi-override;
-            font-weight: bold;
-        }
-
-        @media print {
-            body {
-                margin: 20px;
-            }
-
-            img {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
+    }
     </style>
 </head>
 
@@ -171,16 +171,16 @@
                 </td>
                 <td style="text-align:center; vertical-align: middle; ">
                     <h2 style="margin:0;">پەرگەهـ و فوتوکوپیا چولی</h2>
-                    <p class="desc" style="margin:3px 0; font-size:12px;">
+                    <p style="margin-top: 10px;">
                         بو هەمی پێتڤیێن قوتابخانا و فوتوکوپیێ و چاپکرنێ
                     </p>
-                    <p style="margin:3px 0;">
+                    <p style="margin-top: 10px;">
                         <strong>ناونیشان:</strong> دهوك - تاخێ رەزا - پشت ئوتێلا سی ریکسوس
                     </p>
-                    <p style="margin:3px 0;">
+                    <p style="margin-top: 10px;">
                         <strong>موبایل:</strong> م. چولی 8653 457 0750 / پەرگەهـ 7108 316 0750
                     </p>
-                    <p class="print-date" style="margin-top:6px; font-size:12px;">
+                    <p class="print-date" style="margin-top: 10px;">
                         <strong>تاريخ الطباعة:</strong> {{ now()->format('Y-m-d H:i') }}
                     </p>
                 </td>

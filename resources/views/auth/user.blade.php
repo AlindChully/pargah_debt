@@ -11,24 +11,24 @@
     <link rel="stylesheet" href="{{ asset('css/three-d.css') }}">
 
     <style>
-    @media (max-width: 768px) {
+        @media (max-width: 768px) {
 
-        th,
-        td {
-            font-size: 10px;
-        }
+            th,
+            td {
+                font-size: 10px;
+            }
 
-        /* اخفاء نص الأزرار في الأعمدة Actions */
-        .action button i+span,
-        .action button {
-            font-size: 0;
-        }
+            /* اخفاء نص الأزرار في الأعمدة Actions */
+            .action button i+span,
+            .action button {
+                font-size: 0;
+            }
 
-        /* يمكن إبقاء الأيقونة فقط */
-        .action button i {
-            font-size: 10px;
+            /* يمكن إبقاء الأيقونة فقط */
+            .action button i {
+                font-size: 10px;
+            }
         }
-    }
     </style>
 </head>
 
@@ -125,21 +125,21 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
     <script>
-    //Edit button
-    document.querySelectorAll('.editUserBtn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const id = this.dataset.id;
-            const name = this.dataset.name;
-            const phone = this.dataset.phone;
-            const password = this.dataset.password;
+        //Edit button
+        document.querySelectorAll('.editUserBtn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const id = this.dataset.id;
+                const name = this.dataset.name;
+                const phone = this.dataset.phone;
+                const password = this.dataset.password;
 
-            document.getElementById('edit_name').value = name;
-            document.getElementById('edit_phone').value = phone;
-            document.getElementById('edit_password').value = password;
+                document.getElementById('edit_name').value = name;
+                document.getElementById('edit_phone').value = phone;
+                document.getElementById('edit_password').value = password;
 
-            document.getElementById('editUserForm').action = `/users/${id}`;
+                document.getElementById('editUserForm').action = `/users/${id}`;
+            });
         });
-    });
     </script>
 
 </body>

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Mpdf\Mpdf;
 use Carbon\Carbon;
 use App\Models\Debt;
 use App\Models\Receipt;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use Barryvdh\Snappy\Facades\SnappyPdf;
 
 class ReportController extends Controller
@@ -89,13 +91,13 @@ class ReportController extends Controller
 
         if ($type === 'monthly') {
             $month = $request->month ?? now()->format('Y-m');
-            $from = Carbon::parse($month)->startOfMonth();
-            $to   = Carbon::parse($month)->endOfMonth();
+            $from  = Carbon::parse($month)->startOfMonth();
+            $to    = Carbon::parse($month)->endOfMonth();
             $title = 'تقرير شهري';
         } else {
-            $year = $request->year ?? now()->year;
-            $from = Carbon::create($year, 1, 1);
-            $to   = Carbon::create($year, 12, 31);
+            $year  = $request->year ?? now()->year;
+            $from  = Carbon::create($year, 1, 1);
+            $to    = Carbon::create($year, 12, 31);
             $title = 'تقرير سنوي';
         }
 
@@ -106,13 +108,28 @@ class ReportController extends Controller
 
         $paidTotal = Receipt::whereBetween('receipt_date', [$from, $to])->sum('amount');
 
-        $fileName = 'customers_report_' . now()->format('Ymd_His') . '.pdf';
-
-        return SnappyPdf::loadView(
+        // توليد HTML من Blade
+        $html = View::make(
             'reports.customers_pdf',
             compact('customers', 'from', 'to', 'title', 'paidTotal')
-        )
-            ->setPaper('a4')
-            ->download($fileName);
+        )->render();
+
+        // إنشاء PDF
+        $mpdf = new Mpdf([
+            'mode' => 'utf-8',
+            'format' => 'A4',
+            'default_font' => 'dejavusans', // مهم للعربي
+            'margin_top' => 10,
+            'margin_bottom' => 10,
+        ]);
+
+        $mpdf->WriteHTML($html);
+
+        $fileName = 'customers_report_' . now()->format('Ymd_His') . '.pdf';
+
+        // تحميل مباشر
+        return response($mpdf->Output($fileName, 'S'))
+            ->header('Content-Type', 'application/pdf')
+            ->header('Content-Disposition', 'attachment; filename="' . $fileName . '"');
     }
 }

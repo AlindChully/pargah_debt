@@ -6,103 +6,103 @@
     <title>Debts_{{ $customer->name }}</title>
 
     <style>
-    @page {
-        margin: 20px;
-    }
+        @page {
+            margin: 20px;
+        }
 
-    body {
-        font-family: Tahoma, Arial, sans-serif;
-        direction: rtl;
-        font-size: 13px;
-    }
+        body {
+            font-family: DejaVu Sans, Tahoma, Arial;
+            direction: rtl;
+            font-size: 13px;
+        }
 
-    .header {
-        text-align: center;
-        margin-bottom: 15px;
-    }
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
 
-    .header table {
-        width: 100%;
-        border-collapse: collapse;
-    }
+        .header table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-    .header img {
-        width: 90px;
-        height: 90px;
-        object-fit: contain;
-    }
+        .header img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
 
-    .header h2 {
-        margin: 0;
-        font-size: 20px;
-    }
+        .header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
 
-    .header p {
-        margin: 3px 0;
-        font-size: 12px;
-    }
+        .header p {
+            margin: 3px 0;
+            font-size: 12px;
+        }
 
-    hr {
-        margin: 10px 0;
-    }
+        hr {
+            margin: 10px 0;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
 
-    th,
-    td {
-        border: 1px solid #000;
-        padding: 6px;
-        text-align: center;
-    }
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 6px;
+            text-align: center;
+        }
 
-    th {
-        background: #f0f0f0;
-        font-weight: bold;
-    }
+        th {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
 
-    .totals {
-        margin-top: 15px;
-        width: 40%;
-    }
+        .totals {
+            margin-top: 15px;
+            width: 40%;
+        }
 
-    .totals td,
-    .totals th {
-        border: 1px solid #000;
-        padding: 6px;
-    }
+        .totals td,
+        .totals th {
+            border: 1px solid #000;
+            padding: 6px;
+        }
 
-    .signatures {
-        margin-top: 60px;
-        overflow: hidden;
-        page-break-inside: avoid;
-    }
+        .signatures {
+            margin-top: 60px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
 
-    .signature {
-        width: 40%;
-        text-align: center;
-    }
+        .signature {
+            width: 40%;
+            text-align: center;
+        }
 
-    .signature.right {
-        float: left;
-    }
+        .signature.right {
+            float: left;
+        }
 
-    .signature.left {
-        float: right;
-    }
+        .signature.left {
+            float: right;
+        }
 
-    .signature p {
-        margin-top: 60px;
-        padding-top: 5px;
-    }
+        .signature p {
+            margin-top: 60px;
+            padding-top: 5px;
+        }
 
-    .ltr {
-        direction: ltr;
-        text-align: left;
-    }
+        .ltr {
+            direction: ltr;
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -117,10 +117,10 @@
                 </td>
                 <td>
                     <h2>پەرگەهـ و فوتوکوپیا چولی</h2>
-                    <p>بو هەمی پێتڤیێن قوتابخانا و فوتوکوپیێ و چاپکرنێ</p>
-                    <p><strong>العنوان:</strong> دهوك - تاخێ رەزا - پشت ئوتێلا سی ریکسوس</p>
-                    <p><strong>الموبايل:</strong> 0750 457 8653 / 0750 316 7108</p>
-                    <p><strong>تاريخ الطباعة:</strong> {{ now()->format('Y-m-d H:i') }}</p>
+                    <p style="margin-top: 10px;">بو هەمی پێتڤیێن قوتابخانا و فوتوکوپیێ و چاپکرنێ</p>
+                    <p style="margin-top: 10px;"><strong>العنوان:</strong> دهوك - تاخێ رەزا - پشت ئوتێلا سی ریکسوس</p>
+                    <p style="margin-top: 10px;"><strong>الموبايل:</strong> 0750 457 8653 / 0750 316 7108</p>
+                    <p style="margin-top: 10px;"><strong>تاريخ الطباعة:</strong> {{ now()->format('Y-m-d H:i') }}</p>
                 </td>
             </tr>
         </table>

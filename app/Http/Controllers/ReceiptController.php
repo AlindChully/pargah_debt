@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Mpdf\Mpdf;
 use Carbon\Carbon;
 use App\Models\Customer;
 use App\Models\Receipt;
 use App\Models\CustomerBalance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\Snappy\Facades\SnappyPdf;
 
@@ -151,12 +153,23 @@ class ReceiptController extends Controller
 
     public function pdf(Receipt $receipt)
     {
+        // توليد HTML من Blade
+        $html = View::make('receipts.pdf', compact('receipt'))->render();
+
+        // إنشاء ملف PDF
+        $mpdf = new Mpdf([
+            'mode' => 'utf-8',
+            'format' => 'A4',
+            'default_font' => 'dejavusans', // مهم جداً للعربي
+        ]);
+
+        $mpdf->WriteHTML($html);
+
         $fileName = 'receipt_' . $receipt->id . '.pdf';
 
-        return SnappyPdf::loadView('receipts.pdf', compact('receipt'))
-            ->setOption('encoding', 'UTF-8')
-            ->setOption('enable-local-file-access', true)
-            ->setOption('disable-smart-shrinking', true)
-            ->download($fileName);
+        // تحميل مباشر
+        return response($mpdf->Output($fileName, 'S'))
+            ->header('Content-Type', 'application/pdf')
+            ->header('Content-Disposition', 'attachment; filename="' . $fileName . '"');
     }
 }

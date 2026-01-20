@@ -8,6 +8,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * php artisan migrate --path=/database/migrations/2026_01_08_224139_add_type_to_users_table.php
      */
     public function up()
     {

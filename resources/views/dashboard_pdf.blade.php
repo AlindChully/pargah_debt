@@ -7,7 +7,7 @@
 
     <style>
     body {
-        font-family: Tahoma, Arial, sans-serif;
+        font-family: DejaVu Sans, Tahoma, Arial;
         direction: rtl;
         font-size: 13px;
     }
@@ -56,7 +56,7 @@
         font-weight: bold;
         background: #d8d8d8;
         border-radius: 5px;
-
+        text-align: center;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -157,17 +157,17 @@
                         style="width:100px; height:100px; object-fit:contain;">
                 </td>
                 <td style="text-align:center; vertical-align: middle; ">
-                    <h2 style="margin:0;">پەرگەهـ و فوتوکوپیا چولی</h2>
-                    <p class="desc" style="margin:3px 0; font-size:12px;">
+                    <h2 style="margin: 0;">پەرگەهـ و فوتوکوپیا چولی</h2>
+                    <p style="margin-top: 10px;">
                         بو هەمی پێتڤیێن قوتابخانا و فوتوکوپیێ و چاپکرنێ
                     </p>
-                    <p style="margin:3px 0;">
+                    <p style="margin-top: 10px;">
                         <strong>ناونیشان:</strong> دهوك - تاخێ رەزا - پشت ئوتێلا سی ریکسوس
                     </p>
-                    <p style="margin:3px 0;">
+                    <p style="margin-top: 10px;">
                         <strong>موبایل:</strong> م. چولی 8653 457 0750 / پەرگەهـ 7108 316 0750
                     </p>
-                    <p class="print-date" style="margin-top:6px; font-size:12px;">
+                    <p class="print-date" style="margin-top: 10px; font-size:12px;">
                         <strong>تاريخ الطباعة:</strong> {{ now()->format('Y-m-d H:i') }}
                     </p>
                 </td>

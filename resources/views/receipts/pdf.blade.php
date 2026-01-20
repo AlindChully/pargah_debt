@@ -6,7 +6,7 @@
     <title>وصل قبض</title>
     <style>
     body {
-        font-family: Tahoma, Arial, sans-serif;
+        font-family: DejaVu Sans, Tahoma, Arial;
         font-size: 14px;
         direction: rtl;
     }
@@ -130,11 +130,12 @@
                             style="width:100px; height:100px; object-fit:contain;"> </td>
                     <td style="text-align:center; vertical-align: middle; ">
                         <h2 style="margin:0;">پەرگەهـ و فوتوکوپیا چولی</h2>
-                        <p class="desc" style="margin:3px 0; font-size:12px;"> بو هەمی پێتڤیێن قوتابخانا و فوتوکوپیێ و
+                        <p style="margin-top: 10px;"> بو هەمی پێتڤیێن قوتابخانا و فوتوکوپیێ و
                             چاپکرنێ </p>
-                        <p style="margin:3px 0;"> <strong>ناونیشان:</strong> دهوك - تاخێ رەزا - پشت ئوتێلا سی ریکسوس
+                        <p style="margin-top: 10px;"> <strong>ناونیشان:</strong> دهوك - تاخێ رەزا - پشت ئوتێلا سی ریکسوس
                         </p>
-                        <p style="margin:3px 0;"> <strong>موبایل:</strong> م. چولی 8653 457 0750 / پەرگەهـ 7108 316 0750
+                        <p style="margin-top: 10px;"> <strong>موبایل:</strong> م. چولی 8653 457 0750 / پەرگەهـ 7108 316
+                            0750
                         </p>
                     </td>
                 </tr>

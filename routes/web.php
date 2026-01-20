@@ -11,6 +11,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 
 Route::middleware(['auth'])->group(function () {
+
+    Route::get('/', function () {
+        return redirect()->route('dashboard');
+    });
+
     //user
     Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
