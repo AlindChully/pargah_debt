@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="body m-4">
         <h3 class="mb-3">{{ __('general.users page') }}</h3>
 
