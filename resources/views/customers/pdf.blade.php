@@ -76,28 +76,29 @@
         }
 
         .signatures {
-            margin-top: 60px;
-            overflow: hidden;
-            page-break-inside: avoid;
-        }
+        width: 100%;
+        margin-top: 80px;
+        overflow: hidden;
+    }
 
-        .signature {
-            width: 40%;
-            text-align: center;
-        }
+    .signature {
+        width: 40%;
+        text-align: center;
+    }
 
-        .signature.right {
-            float: left;
-        }
+    .signature.right {
+        float: left;
+    }
 
-        .signature.left {
-            float: right;
-        }
+    .signature.left {
+        float: right;
+    }
 
-        .signature p {
-            margin-top: 60px;
-            padding-top: 5px;
-        }
+    /* خط التوقيع */
+    .signature p {
+        margin-top: 60px;
+        padding-top: 10px;
+    }
 
         .ltr {
             direction: ltr;
