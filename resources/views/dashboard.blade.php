@@ -394,7 +394,18 @@
             </div>
         </div>
 
-        <div class="table-wrapper">
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <input type="text" id="customerSearch" class="form-control input3D"
+                    placeholder="🔍 {{ __('general.search') }}...">
+            </div>
+        </div>
+
+        <div id="noResult" class="text-center mt-4" style="display:none;">
+            <h5 class="text-danger">❌ {{ __('general.this is not a debt.') }}</h5>
+        </div>
+        
+        <div class="table-wrapper" id="customersTable">
             <table class="table table-hover text-center align-middle teble3D desktop-table">
                 <thead style="background-color: #EEEEEE;">
                     <tr>
@@ -505,6 +516,35 @@
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 
     <script>
+        //search
+        document.getElementById('customerSearch').addEventListener('keyup', function() {
+            const value = this.value.toLowerCase();
+            let found = false;
+
+            /* ====== TABLE ====== */
+            document.querySelectorAll('#customersTable tr').forEach(row => {
+                const name = row.children[1]?.innerText.toLowerCase() || '';
+                const phone = row.children[2]?.innerText.toLowerCase() || '';
+
+                const match = name.includes(value) || phone.includes(value);
+                row.style.display = match ? '' : 'none';
+                if (match) found = true;
+            });
+
+            /* ====== MOBILE CARDS ====== */
+            document.querySelectorAll('.customer-card').forEach(card => {
+                const name = card.querySelector('.card-header strong')?.innerText.toLowerCase() || '';
+                const phone = card.querySelector('.phone')?.innerText.toLowerCase() || '';
+
+                const match = name.includes(value) || phone.includes(value);
+                card.style.display = match ? '' : 'none';
+                if (match) found = true;
+            });
+
+            /* ====== NO RESULT MESSAGE ====== */
+            document.getElementById('noResult').style.display = found ? 'none' : 'block';
+        });
+        
         //Edit
         document.querySelectorAll('.editCustomerBtn').forEach(btn => {
             btn.addEventListener('click', function() {
