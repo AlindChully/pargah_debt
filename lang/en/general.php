@@ -88,7 +88,7 @@ return [
     'users page' => 'Users Page',
     'search' => 'Search',
     'this is not a debt.' => 'This is not a debt.',
-    'kurdi' => 'Kurdi',
+    'kurdi' => 'Kurdish',
     '' => '',
     '' => '',
     '' => '',
