@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
 
     //lang
     Route::get('/lang/{lang}', function ($lang) {
-        if (in_array($lang, ['ar', 'en'])) {
+        if (in_array($lang, ['ar', 'en', 'krd'])) {
             session(['locale' => $lang]);
         }
         return back();
