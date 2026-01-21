@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/employeepage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/three-d.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
 
     <style>
         @media (max-width: 768px) {
