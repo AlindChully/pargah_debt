@@ -449,12 +449,14 @@
                                     class="btn btn-sm cardBtn3D danger"><i class="bi bi-trash"></i>
                                     {{ __('general.delete') }}</button>
                             </form>
+                            <!--  
                             <form action="{{ route('debts.toggle', $debt->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit"
                                     class="btn btn-sm cardBtn3D info">{{ $debt->is_paid ? 'Mark Unpaid' : 'Mark Paid' }}</button>
                             </form>
+                            -->
                         </td>
                     </tr>
                     @empty
@@ -519,6 +521,7 @@
                     <button onclick="return confirm('Are you sure?');" class="btn btn-sm cardBtn3D danger"><i
                             class="bi bi-trash"></i> {{ __('general.delete') }}</button>
                 </form>
+                <!-- 
                 <form action="{{ route('debts.toggle', $debt->id) }}" method="POST">
                     @csrf
                     @method('PATCH')
@@ -526,6 +529,7 @@
                         {{ $debt->is_paid ? 'Unpaid' : 'Paid' }}
                     </button>
                 </form>
+                -->
             </div>
         </div>
         @endforeach
