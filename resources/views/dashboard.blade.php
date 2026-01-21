@@ -295,7 +295,7 @@
                     <li>
                         <a class="dropdown-item {{ app()->getLocale() === 'krd' ? 'active' : '' }}"
                             href="{{ route('lang.switch', 'krd') }}">
-                            کوردی
+                            {{ __('general.kurdi') }}
                         </a>
                     </li>
                     <li>
