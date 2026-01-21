@@ -289,7 +289,7 @@
                 </button>
                 <button class="btn btn-outline-secondary dropdown-toggle offcanvas-btn mb-2" type="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-globe"></i> {{ app()->getLocale() === 'ar' ? 'العربية' : 'English' }}
+                    <i class="bi bi-globe"></i> {{ app()->getLocale() === 'ar' ? 'العربية' : (app()->getLocale() === 'krd' ? 'کوردی' : 'English') }}
                 </button>
                 <ul class="dropdown-menu">
                     <li>
@@ -355,7 +355,7 @@
         </button>
         <button class="btn dropdown-toggle btn-primary btn3D mb-3 d-none d-md-inline-block" type="button"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-globe"></i> {{ app()->getLocale() === 'ar' ? 'العربية' : 'English' }}
+            <i class="bi bi-globe"></i> {{ app()->getLocale() === 'ar' ? 'العربية' : (app()->getLocale() === 'krd' ? 'کوردی' : 'English') }}
         </button>
         <ul class="dropdown-menu">
             <li>
