@@ -146,6 +146,9 @@
             aria-controls="mobileActions">
             ☰ {{ __('general.menu') }}
         </button>
+        <button class="btn btn3D mb-3" data-bs-toggle="modal" data-bs-target="#addDebtModal">
+            {{ __('general.add new debt') }}
+        </button>
 
         <!-- Offcanvas -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileActions" aria-labelledby="mobileActionsLabel">
@@ -157,9 +160,6 @@
                     data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body d-flex flex-column gap-2">
-                <button class="btn offcanvas-btn mb-2" data-bs-toggle="modal" data-bs-target="#addDebtModal">
-                    {{ __('general.add new debt') }}
-                </button>
                 <button class="btn offcanvas-btn mb-2" data-bs-toggle="modal" data-bs-target="#receiptModal">
                     <i class="bi bi-cash-coin"></i> {{ __('general.receipt received') }}
                 </button>
