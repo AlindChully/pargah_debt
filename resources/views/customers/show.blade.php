@@ -187,10 +187,6 @@
             </div>
         </div>
 
-        <button class="btn btn-primary btn3D mb-3 d-none d-md-inline-block" data-bs-toggle="modal"
-            data-bs-target="#addDebtModal">
-            {{ __('general.add new debt') }}
-        </button>
         <button class="btn btn-success btn3D mb-3 d-none d-md-inline-block" data-bs-toggle="modal"
             data-bs-target="#receiptModal">
             <i class="bi bi-cash-coin"></i> {{ __('general.receipt received') }}
