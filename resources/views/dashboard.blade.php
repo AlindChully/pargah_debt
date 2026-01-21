@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+<html lang="{{ app()->getLocale() }}" dir="{{ in_array(app()->getLocale(), ['ar','krd']) ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="UTF-8">
@@ -293,6 +293,12 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li>
+                        <a class="dropdown-item {{ app()->getLocale() === 'krd' ? 'active' : '' }}"
+                            href="{{ route('lang.switch', 'krd') }}">
+                            کوردی
+                        </a>
+                    </li>
+                    <li>
                         <a class="dropdown-item {{ app()->getLocale() === 'ar' ? 'active' : '' }}"
                             href="{{ route('lang.switch', 'ar') }}">
                             {{ __('general.arabic') }}
@@ -352,6 +358,12 @@
             <i class="bi bi-globe"></i> {{ app()->getLocale() === 'ar' ? 'العربية' : 'English' }}
         </button>
         <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item {{ app()->getLocale() === 'krd' ? 'active' : '' }}"
+                    href="{{ route('lang.switch', 'krd') }}">
+                    {{ __('general.kurdi') }}
+                </a>
+            </li>
             <li>
                 <a class="dropdown-item {{ app()->getLocale() === 'ar' ? 'active' : '' }}"
                     href="{{ route('lang.switch', 'ar') }}">
