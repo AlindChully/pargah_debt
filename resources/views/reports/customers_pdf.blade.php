@@ -8,15 +8,13 @@
     <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
 
     <style>
-    @page {
-        size: A4;
-        margin: 15mm;
-    }
 
     body {
         font-family: DejaVu Sans, Tahoma, Arial, sans-serif;
         font-size: 13px;
         color: #000;
+        size: A4;
+        margin: 15mm;
     }
 
     .header-fixed {
@@ -244,7 +242,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($customers as $customer)
+            @forelse($customers as $customer)
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $customer->name }}</td>
@@ -257,7 +255,11 @@
                     {{ number_format($customer->receipts->sum('amount')) }}
                 </td>
             </tr>
-            @endforeach
+            @empty
+            <tr>
+                <td colspan="6">لا توجد بيانات</td>
+            </tr>
+            @endforelse
         </tbody>
     </table>
 
