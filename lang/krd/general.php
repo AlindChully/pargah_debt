@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'dashboard' => 'لوحة التحكم',
-    'customers' => 'الزبائن',
-    'total_debts' => 'مجموع الديون',
-    'login' => 'تسجيل الدخول',
-    'logout' => 'تسجيل الخروج',
+    'dashboard' => 'داشبورد',
+    'customers' => 'بکێر',
+    'total_debts' => 'سەرجەمێ قەرزا',
+    'login' => 'چونا ژور',
+    'logout' => 'دەرکەتن',
     'menu' => 'مينيو',
-    'profile' => 'حساب تعريفي',
-    'add user' => 'إضافة مستخدم',
+    'profile' => 'پروفایل',
+    'add user' => 'زێدەکرنا بکارهێنەرەکی',
     'users' => 'المستخدمون',
     'add new customer' => 'إضافة عميل جديد',
     'monthly / annual report' => 'التقرير الشهري / السنوي',
